@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciador de Contas Bancárias</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="detalhesConta">
+    <h2 id="tituloDetalhes">Insira os detalhes da conta</h2>
+    <form id="formConta">
+        Agência: <input type="number" id="agencia"><br><br>
+        Número: <input type="text" id="numero"><br><br>
+        Tipo: <select id="tipo" onchange="checkTipo()">
+            <option value="ContaBancaria">Conta Bancária</option>
+            <option value="ContaCorrente">Conta Corrente</option>
+            <option value="ContaPoupanca">Conta Poupança</option>
+            <option value="ContaUniversitaria">Conta Universitária</option>
+        </select><br><br>
+        Saldo: <input type="number" id="saldo"><br><br>
+        Cartão de Crédito: <input type="checkbox" id="cartaoCredito" style="display:none;"><br><br>
+        <button type="button" onclick="inserirConta()">Inserir</button>
+        <button type="button" onclick="visualizarContas()">Visualizar</button>
+        <button type="button" onclick="deletarConta()">Deletar</button>
+    </form>
+</div>
+
+<h2 id="tituloLista" style="display: none;">Lista de contas</h2>
+<div id="scrollable">
+    <ul id="listaContas"></ul>
+</div>
+<button id="btnVoltar" style="display: none;" onclick="voltarParaDetalhes()">Voltar</button>
+
+<script src="script.js"></script>
+</body>
+
+</html>
